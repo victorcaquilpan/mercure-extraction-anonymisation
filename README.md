@@ -16,11 +16,19 @@ Here is the documentation for running the Mercure pipeline for running locally i
 git clone https://github.com/mercure-imaging/mercure.git
 ```
 
-2) Install mercure using docker 
-
+2) Install Mercure using Docker by pulling docker images and run containers. 
 ```bash
 sudo ./install.sh docker
 ```
+At the end of the installation, **mercureimaging** Docker images should be donwloaded. 
+Mercure is using several containers for all the modules.Also a directory in **/opt/mercure** is created.
+
+
+3) Access to Mercure app.
+```
+http://127.0.0.1:8000/
+```
+
 
 
 ## Purpose

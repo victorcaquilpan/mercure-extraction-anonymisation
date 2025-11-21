@@ -1,2 +1,2 @@
 build:
-	docker build . -t aiml/extraction-anonym-test:latest
+	docker build . -t aiml/extraction-anonymisation:latest
