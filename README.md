@@ -1,4 +1,27 @@
-# anonymisation and extraction module
+# Anonymisation and Extraction Module using Mercure
+
+# Mercure pipeline
+
+Here is the documentation for running the Mercure pipeline for running locally in SA health.
+
+## Requirements
+
+* Running Docker
+
+## **Steps**
+
+1) Clone the mercure repository: 
+
+```bash
+git clone https://github.com/mercure-imaging/mercure.git
+```
+
+2) Install mercure using docker 
+
+```bash
+sudo ./install.sh docker
+```
+
 
 ## Purpose
 
