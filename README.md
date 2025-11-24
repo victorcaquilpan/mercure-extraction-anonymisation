@@ -129,16 +129,16 @@ This is what you would see locally:
 
 ![Ouput](./images/output.png)
 
-The description of the structure is:
+The structure of the output is defined by:
 
 * **main output folder**: This is a main directory where the data is stored. Located at **/opt/mercure/mercure-output**.
 * **study folder**: Filename is assigned randomly.
 * **anonymised-images**: it contains one folder per session and in each one, there will be available the images. The filename is the instance number.
 * **extracted-data folder**: It contains the DICOM tags of the first DICOM image for that session. Personal information is removed.
 * **task.json file**: Filename is based on the studyID. It contains the pipeline process performed, the sessions and the accession number.
+* **.complete** and **.processing** are just placeholders to confirm the preprocessing was completed. mercure create them by default.
 
-
-
+You can find the output of this demo in the **sample-output** folder.
 
 
 ### Notes
