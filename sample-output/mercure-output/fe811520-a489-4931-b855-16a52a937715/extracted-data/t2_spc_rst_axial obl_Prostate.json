@@ -1,0 +1,119 @@
+(0008, 0005) SpecificCharacterSet: ISO_IR 100
+(0008, 0008) ImageType: ['ORIGINAL', 'PRIMARY', 'M', 'ND', 'NORM']
+(0008, 0012) InstanceCreationDate: 00010101
+(0008, 0013) InstanceCreationTime: 000000.00
+(0008, 0016) SOPClassUID: 1.2.840.10008.5.1.4.1.1.4
+(0008, 0018) SOPInstanceUID: 2.25.225244198744364444260161570953624833020
+(0008, 0020) StudyDate: 00010101
+(0008, 0021) SeriesDate: 00010101
+(0008, 0022) AcquisitionDate: 00010101
+(0008, 0023) ContentDate: 00010101
+(0008, 0030) StudyTime: 000000.00
+(0008, 0031) SeriesTime: 000000.00
+(0008, 0032) AcquisitionTime: 000000.00
+(0008, 0033) ContentTime: 000000.00
+(0008, 0050) AccessionNumber: 
+(0008, 0060) Modality: MR
+(0008, 0070) Manufacturer: SIEMENS
+(0008, 0090) ReferringPhysicianName: 
+(0008, 1032) ProcedureCodeSequence: [(0008, 0100) Code Value                          SH: 'IMG5563'
+(0008, 0102) Coding Scheme Designator            SH: 'GEIIS'
+(0008, 0103) Coding Scheme Version               SH: '0'
+(0008, 0104) Code Meaning                        LO: 'MRI PROSTATE W WO CONTRAST']
+(0008, 103e) SeriesDescription: t2_spc_rst_axial obl_Prostate
+(0008, 1090) ManufacturerModelName: Skyra
+(0008, 1140) ReferencedImageSequence: [(0008, 1150) Referenced SOP Class UID            UI: ''
+(0008, 1155) Referenced SOP Instance UID         UI: ''(0008, 1150) Referenced SOP Class UID            UI: ''
+(0008, 1155) Referenced SOP Instance UID         UI: ''(0008, 1150) Referenced SOP Class UID            UI: ''
+(0008, 1155) Referenced SOP Instance UID         UI: '']
+(0009, 0010) : GEIIS
+(0010, 0010) PatientName: gKAhghFb
+(0010, 0020) PatientID: 
+(0010, 0030) PatientBirthDate: 19440101
+(0010, 0040) PatientSex: 
+(0013, 0010) : CTP
+(0013, 1010) : [Binary data - 22 bytes]
+(0013, 1013) : [Binary data - 8 bytes]
+(0018, 0015) BodyPartExamined: PELVIS
+(0018, 0020) ScanningSequence: SE
+(0018, 0021) SequenceVariant: ['SK', 'SP', 'OSP']
+(0018, 0022) ScanOptions: PFP
+(0018, 0023) MRAcquisitionType: 3D
+(0018, 0024) SequenceName: *spcRrr121
+(0018, 0025) AngioFlag: N
+(0018, 0050) SliceThickness: 1.5
+(0018, 0080) RepetitionTime: 2200
+(0018, 0081) EchoTime: 201
+(0018, 0083) NumberOfAverages: 2
+(0018, 0084) ImagingFrequency: 123.139276
+(0018, 0085) ImagedNucleus: 1H
+(0018, 0086) EchoNumbers: 1
+(0018, 0087) MagneticFieldStrength: 3
+(0018, 0089) NumberOfPhaseEncodingSteps: 328
+(0018, 0091) EchoTrainLength: 88
+(0018, 0093) PercentSampling: 90
+(0018, 0094) PercentPhaseFieldOfView: 100
+(0018, 0095) PixelBandwidth: 315
+(0018, 1000) DeviceSerialNumber: ANONYMIZED
+(0018, 1020) SoftwareVersions: syngo MR D13
+(0018, 1030) ProtocolName: ANONYMIZED
+(0018, 1251) TransmitCoilName: Body
+(0018, 1310) AcquisitionMatrix: [0, 256, 230, 0]
+(0018, 1312) InPlanePhaseEncodingDirection: ROW
+(0018, 1314) FlipAngle: 110
+(0018, 1315) VariableFlipAngleFlag: N
+(0018, 1316) SAR: 0.78650830559605
+(0018, 1318) dBdt: 0
+(0018, 5100) PatientPosition: FFS
+(0019, 0010) : SIEMENS MR HEADER
+(0019, 100b) : 420765
+(0019, 100f) : 
+(0019, 1011) : Read
+(0019, 1012) : [0, 0, -1864]
+(0019, 1014) : [0, 0, -1]
+(0019, 1015) : [-57.8813553, -54.97578619, 39.45581055]
+(0019, 1017) : 0.666667
+(0019, 1018) : 6200
+(0020, 000d) StudyInstanceUID: 2.25.163077074614620138377149312281785388135
+(0020, 000e) SeriesInstanceUID: 2.25.195250853173611554350652430259613005127
+(0020, 0010) StudyID: 2.25.249384313008542598986040768288326933218
+(0020, 0011) SeriesNumber: 4
+(0020, 0012) AcquisitionNumber: 1
+(0020, 0013) InstanceNumber: 20
+(0020, 0032) ImagePositionPatient: [-57.881355303078, -54.975786191673, 38.455810546875]
+(0020, 0037) ImageOrientationPatient: [1, -2.05103e-010, 0, 2.05103e-010, 1, 0]
+(0020, 0052) FrameOfReferenceUID: 2.25.282324912957072279120103084993814197414
+(0020, 1040) PositionReferenceIndicator: 
+(0020, 1041) SliceLocation: 38.455810546875
+(0028, 0002) SamplesPerPixel: 1
+(0028, 0004) PhotometricInterpretation: MONOCHROME2
+(0028, 0010) Rows: 256
+(0028, 0011) Columns: 256
+(0028, 0030) PixelSpacing: [0.6640625, 0.6640625]
+(0028, 0100) BitsAllocated: 16
+(0028, 0101) BitsStored: 12
+(0028, 0102) HighBit: 11
+(0028, 0103) PixelRepresentation: 0
+(0028, 0106) SmallestImagePixelValue: 0
+(0028, 0107) LargestImagePixelValue: 283
+(0028, 0303) LongitudinalTemporalInformationModified: MODIFIED
+(0028, 1050) WindowCenter: 156
+(0028, 1051) WindowWidth: 367
+(0028, 1055) WindowCenterWidthExplanation: Algo1
+(0029, 0010) : SIEMENS CSA HEADER
+(0029, 0011) : SIEMENS MEDCOM HEADER2
+(0029, 1160) : com
+(0032, 1060) RequestedProcedureDescription: 
+(0032, 1064) RequestedProcedureCodeSequence: [(0008, 0100) Code Value                          SH: '97482'
+(0008, 0102) Coding Scheme Designator            SH: 'L'
+(0008, 0104) Code Meaning                        LO: 'MRI PROSTATE W W']
+(0040, 0244) PerformedProcedureStepStartDate: 00010101
+(0040, 2017) FillerOrderNumberImagingServiceRequest: 
+(0051, 0010) : SIEMENS MR HEADER
+(0051, 1008) : IMAGE NUM 4
+(0903, 0010) : GEIIS PACS
+(0903, 1011) : 0
+(0903, 1012) : 0
+(0905, 0010) : GEIIS
+(7fd1, 0010) : GEIIS
+(7fe0, 0010) PixelData: [Binary data - 131072 bytes]

@@ -1,0 +1,74 @@
+{
+    "info": {
+        "action": "both",
+        "uid": "2.25.250849867305193796630300506298189987318",
+        "uid_type": "study",
+        "triggered_rules": {
+            "local-extraction": true
+        },
+        "applied_rule": "local-extraction",
+        "mrn": "9894340694",
+        "acc": "597B9256",
+        "sender_address": "172.19.0.1",
+        "mercure_version": "0.4.0-beta.7",
+        "mercure_appliance": "master",
+        "mercure_server": "1ac5e21c51ba",
+        "device_serial_number": "7671",
+        "fail_stage": null,
+        "sender_aet": "orthanc",
+        "receiver_aet": "mercure"
+    },
+    "id": "6d13f6ce-c8db-11f0-93c1-7a22f82623b8",
+    "dispatch": {
+        "target_name": [
+            "local-pc"
+        ],
+        "status": {
+            "local-pc": {
+                "state": "waiting",
+                "time": "2025-11-24 02:15:20"
+            }
+        },
+        "retries": null,
+        "next_retry_at": null,
+        "series_uid": null
+    },
+    "process": {
+        "module_name": "extraction",
+        "module_config": {
+            "docker_tag": "aiml/extraction-anonymisation:latest",
+            "additional_volumes": "",
+            "environment": "",
+            "docker_arguments": "",
+            "settings": {},
+            "contact": "",
+            "comment": "",
+            "constraints": "",
+            "resources": "",
+            "requires_root": false
+        },
+        "settings": {},
+        "retain_input_images": false,
+        "output": null
+    },
+    "study": {
+        "study_uid": "2.25.250849867305193796630300506298189987318",
+        "complete_trigger": "timeout",
+        "complete_required_series": "*",
+        "creation_time": "2025-11-24 02:15:20",
+        "last_receive_time": "2025-11-24 02:15:20",
+        "received_series": [
+            "LIVER-PELVIS/HASTE_AXIAL_P",
+            "LIVER-KIDNEY/TI_FL2D_AXIAL",
+            "LIVER-PELVIS/HASTE_SAG_POS"
+        ],
+        "received_series_uid": [
+            "2.25.115502210980931447594853482093891665398",
+            "2.25.328152866283087275369945684055854530038",
+            "2.25.59670009184012098066750173717944974838"
+        ],
+        "complete_force": false,
+        "complete_force_action": "ignore"
+    },
+    "nomad_info": null
+}

@@ -1,0 +1,70 @@
+{
+    "info": {
+        "action": "both",
+        "uid": "2.25.314087865341138619987280644015589539318",
+        "uid_type": "study",
+        "triggered_rules": {
+            "local-extraction": true
+        },
+        "applied_rule": "local-extraction",
+        "mrn": "8732322741",
+        "acc": "20080106E364647",
+        "sender_address": "172.19.0.1",
+        "mercure_version": "0.4.0-beta.7",
+        "mercure_appliance": "master",
+        "mercure_server": "1ac5e21c51ba",
+        "device_serial_number": "",
+        "fail_stage": null,
+        "sender_aet": "orthanc",
+        "receiver_aet": "mercure"
+    },
+    "id": "6d14757c-c8db-11f0-93c1-7a22f82623b8",
+    "dispatch": {
+        "target_name": [
+            "local-pc"
+        ],
+        "status": {
+            "local-pc": {
+                "state": "waiting",
+                "time": "2025-11-24 02:15:20"
+            }
+        },
+        "retries": null,
+        "next_retry_at": null,
+        "series_uid": null
+    },
+    "process": {
+        "module_name": "extraction",
+        "module_config": {
+            "docker_tag": "aiml/extraction-anonymisation:latest",
+            "additional_volumes": "",
+            "environment": "",
+            "docker_arguments": "",
+            "settings": {},
+            "contact": "",
+            "comment": "",
+            "constraints": "",
+            "resources": "",
+            "requires_root": false
+        },
+        "settings": {},
+        "retain_input_images": false,
+        "output": null
+    },
+    "study": {
+        "study_uid": "2.25.314087865341138619987280644015589539318",
+        "complete_trigger": "timeout",
+        "complete_required_series": "*",
+        "creation_time": "2025-11-24 02:15:20",
+        "last_receive_time": "2025-11-24 02:15:20",
+        "received_series": [
+            "t2_spc_rst_axial obl_Prostate"
+        ],
+        "received_series_uid": [
+            "2.25.183883987340968988242665205760765050358"
+        ],
+        "complete_force": false,
+        "complete_force_action": "ignore"
+    },
+    "nomad_info": null
+}

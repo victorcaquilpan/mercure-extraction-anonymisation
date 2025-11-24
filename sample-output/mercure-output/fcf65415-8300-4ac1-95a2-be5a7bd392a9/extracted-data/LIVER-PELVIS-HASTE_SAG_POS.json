@@ -1,0 +1,106 @@
+(0008, 0005) SpecificCharacterSet: ISO_IR 100
+(0008, 0008) ImageType: ['ORIGINAL', 'PRIMARY', 'OTHER']
+(0008, 0016) SOPClassUID: 1.2.840.10008.5.1.4.1.1.4
+(0008, 0018) SOPInstanceUID: 2.25.182667762232700854006804625477959834911
+(0008, 0020) StudyDate: 00010101
+(0008, 0021) SeriesDate: 00010101
+(0008, 0022) AcquisitionDate: 00010101
+(0008, 0023) ContentDate: 00010101
+(0008, 0030) StudyTime: 000000.00
+(0008, 0031) SeriesTime: 000000.00
+(0008, 0032) AcquisitionTime: 000000.00
+(0008, 0033) ContentTime: 000000.00
+(0008, 0050) AccessionNumber: 
+(0008, 0060) Modality: MR
+(0008, 0070) Manufacturer: SIEMENS
+(0008, 0090) ReferringPhysicianName: 
+(0008, 103e) SeriesDescription: LIVER-PELVIS-HASTE_SAG_POS
+(0008, 1090) ManufacturerModelName: MAGNETOM VISION plus
+(0009, 0010) : SPI RELEASE 1
+(0009, 0012) : SIEMENS CM VA0  CMS
+(0009, 0013) : SIEMENS CM VA0  LAB
+(0010, 0010) PatientName: CikBnsKN
+(0010, 0020) PatientID: 
+(0010, 0030) PatientBirthDate: 19310101
+(0010, 0040) PatientSex: 
+(0011, 0010) : SPI RELEASE 1
+(0011, 0011) : SIEMENS CM VA0  CMS
+(0013, 0010) : CTP
+(0013, 1010) : [Binary data - 22 bytes]
+(0013, 1013) : [Binary data - 8 bytes]
+(0018, 0010) ContrastBolusAgent: ANONYMIZED
+(0018, 0015) BodyPartExamined: KIDNEY
+(0018, 0020) ScanningSequence: RM
+(0018, 0021) SequenceVariant: OSP
+(0018, 0022) ScanOptions: 
+(0018, 0023) MRAcquisitionType: 2D
+(0018, 0024) SequenceName: tse1
+(0018, 0025) AngioFlag: N
+(0018, 0050) SliceThickness: 008.000000E+00
+(0018, 0080) RepetitionTime: 004.400000E+00
+(0018, 0081) EchoTime: 009.000000E+01
+(0018, 0083) NumberOfAverages: 1
+(0018, 0084) ImagingFrequency: 006.359438E+01
+(0018, 0085) ImagedNucleus: 1H
+(0018, 0086) EchoNumbers: 1
+(0018, 0087) MagneticFieldStrength: 1.493806
+(0018, 0088) SpacingBetweenSlices: 1.6000064
+(0018, 0091) EchoTrainLength: 1
+(0018, 0093) PercentSampling: 100
+(0018, 0094) PercentPhaseFieldOfView: 75
+(0018, 1000) DeviceSerialNumber: ANONYMIZED
+(0018, 1020) SoftwareVersions: VB33D
+(0018, 1200) DateOfLastCalibration: 00010101
+(0018, 1250) ReceiveCoilName: BoArray
+(0018, 1310) AcquisitionMatrix: [0, 512, 104, 0]
+(0018, 1312) InPlanePhaseEncodingDirection: ROW
+(0018, 1314) FlipAngle: 150
+(0018, 1316) SAR: 0
+(0018, 5100) PatientPosition: HFS
+(0019, 0010) : SIEMENS CM VA0  CMS
+(0019, 0012) : SIEMENS MR VA0  GEN
+(0019, 0014) : SIEMENS MR VA0  COAD
+(0019, 0015) : SIEMENS CM VA0  ACQU
+(0020, 000d) StudyInstanceUID: 2.25.174305232754568826152890999070719869456
+(0020, 000e) SeriesInstanceUID: 2.25.74768474179931840177194242353487569516
+(0020, 0010) StudyID: 2.25.169667638011768777503812354370165927404
+(0020, 0011) SeriesNumber: 16
+(0020, 0012) AcquisitionNumber: 1
+(0020, 0013) InstanceNumber: 276
+(0020, 0030) ImagePosition: [-01.741445E+01, -1.848840E+02, 01.672714E+02]
+(0020, 0032) ImagePositionPatient: [-17.41445, -185.56763, 167.95505]
+(0020, 0035) ImageOrientation: [000.000000E+00, 01.000000E+00, -0.000000E+00, 00.000000E+00, -0.000000E+00, -1.000000E+00]
+(0020, 0037) ImageOrientationPatient: [0, 1, -0, 0, -0, -1]
+(0020, 0050) Location: -01.741445E+01
+(0020, 0052) FrameOfReferenceUID: 2.25.286703744056070976536887421341229483493
+(0020, 0070) ImageGeometryType: PLANAR
+(0020, 0080) MaskingImage: 
+(0020, 1001) AcquisitionsInSeries: 1
+(0020, 1040) PositionReferenceIndicator: 
+(0020, 1041) SliceLocation: -01.741445E+01
+(0021, 0010) : SIEMENS MED
+(0021, 0011) : SIEMENS CM VA0  CMS
+(0021, 0013) : SIEMENS MR VA0  GEN
+(0021, 0023) : SIEMENS MR VA0  RAW
+(0021, 1011) : None
+(0028, 0002) SamplesPerPixel: 1
+(0028, 0004) PhotometricInterpretation: MONOCHROME2
+(0028, 0005) ImageDimensions: None
+(0028, 0010) Rows: 256
+(0028, 0011) Columns: 256
+(0028, 0030) PixelSpacing: [001.367188E+00, 01.367188E+00]
+(0028, 0040) ImageFormat: RECT
+(0028, 0100) BitsAllocated: 16
+(0028, 0101) BitsStored: 12
+(0028, 0102) HighBit: 11
+(0028, 0103) PixelRepresentation: 0
+(0028, 0200) ImageLocation: None
+(0028, 0303) LongitudinalTemporalInformationModified: MODIFIED
+(0028, 1050) WindowCenter: [639, 639]
+(0028, 1051) WindowWidth: [1384, 1384]
+(0029, 0011) : SIEMENS CM VA0  CMS
+(0031, 0010) : AGFA PACS Archive Mirroring 1.0
+(0032, 000a) StudyStatusID: READ
+(0032, 000c) StudyPriorityID: LOW
+(0051, 0010) : SIEMENS CM VA0  CMS
+(7fe0, 0010) PixelData: [Binary data - 131072 bytes]

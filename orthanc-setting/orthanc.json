@@ -1,0 +1,9 @@
+{
+  "Name": "${ORTHANC_NAME} in Docker Compose",
+  "RemoteAccessAllowed": true,
+
+  "DicomModalities": {
+    "mercure-target": [ "mercure", "172.19.0.1", 11112 ],
+    "xnat-victor": ["XNAT","172.19.0.1",8104]
+  }
+}
