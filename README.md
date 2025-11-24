@@ -146,9 +146,17 @@ You can find the output of this demo in the **sample-output** folder.
 * They go to provide to me access to a machine, where I can run mercure. They go to provide a VPN to connect.
 * For mercure, I need to remove the PatientName from the output. **Done**.
 * Remove the worksheets (in the cases where a document is stored in the middle of the DICOM images). **Need a sample to test**
-* Provide a lookup table. **Easily, we can create a look-up table from the task.json files stored in each study, as they keep the accession number**.
+* Provide a lookup table. **Easily, we can create a look-up table from the task.json files stored in each study, as they keep the accession number**. I have created a script to build the lookup table.
 * The JSON files should have the data of the anonymised images. **Done**
 * Use studyID as name for the task.Json file: **Done**
+
+### Full Workflow
+
+
+![Workflow](./images/workflow.png)
+
+
+
 
 ### To solve:
 
