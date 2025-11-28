@@ -33,6 +33,8 @@ The structure of the output is illustrated below:
 
 ## Installation Steps
 
+The 
+
 
 1) Clone the mercure repository: 
 
@@ -98,9 +100,10 @@ Note: Mercure will store the output in **/opt/mercure**
 
 ## Testing
 
-We can test sending data by using:
+We can test sending data by using [DCMTK Tools](https://dicom.offis.de/en/dcmtk/dcmtk-tools/):
 
 ```bash
+sudo apt install dcmtk
 dcmsend 172.19.0.1 11112 --scan-directories --recurse Pseudo-PHI-DICOM-Data
 ```
 
@@ -156,9 +159,49 @@ You can find the output of this demo in the **sample-output** folder.
 ![Workflow](./images/workflow.png)
 
 
-
-
 ### To solve:
 
 * Is there any limitation that mercure can store data just in "/op/mercure"?
+
+### Installation in Windows ?
+
+We need to install Docker. For that we can install Docker Desktop and create the Docker image **extraction**.
+
+Run an instance in a virtual machine by:
+
+* Install [VirtualBox](https://www.virtualbox.org/)
+* Install [Vagrant](https://developer.hashicorp.com/vagrant)
+* Install vagrants plugins:
+
+```bash
+vagrant plugin install vagrant-disksize
+# And run vagrant
+cd /mercure/addons/vagrant/systemd
+vagrant up
+```
+
+In case the port 8000 is already under use, that would be forwarded. In the test, the port 8000 (VM) was forwarded to 2200. Then, to access to mercure, we need to search in the browser:
+
+```bash
+http://localhost:2200/
+```
+
+Some notes:
+
+* To access by SSH to the VM, you can type **vagrant ssh**, command which allows to access straight to the VM.
+* Need to create manually, the folder **mercure-output** in **/opt/mercure/data** directory and make the folder writable by using:
+
+```bash
+sudo chmod 777 mercure-output/
+```
+
+The easiest way to test mercure is sending data with [DCMTK Tools](https://dicom.offis.de/en/dcmtk/dcmtk-tools/):
+
+```bash
+dcmsend 127.0.0.1 --scan-directories --recurse Pseudo-PHI-DICOM-Data
+```
+
+The pipeline process will be running in the background and all the output be stored at **mercure-output** folder. This process can take 5-10 minutes to generate the first results. After that easily you can copy or move the output files to the shared volume **/vagrant**. Everything there is available by the VM and the Windows machine.
+
+
 
