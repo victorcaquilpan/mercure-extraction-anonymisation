@@ -14,7 +14,7 @@ The structure of the output is illustrated below:
 ├── Study1 (newUID)/
 │   ├── anomyised-images/
 │   │   ├── Series1 (SeriesDescription)
-|   |   |   ├──  image1.dcm
+|   |   |   ├──  image1.dcm (InstanceNumber)
 |   |   |   ├──  image2.dcm
 |   |   |   └──  imagen.dcm 
 |   |   └── Series2 
