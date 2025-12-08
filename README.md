@@ -171,14 +171,21 @@ Run an instance in a virtual machine by:
 
 * Install [VirtualBox](https://www.virtualbox.org/)
 * Install [Vagrant](https://developer.hashicorp.com/vagrant)
+* Install Git
 * Install vagrants plugins:
 
 ```bash
 vagrant plugin install vagrant-disksize
-# And run vagrant
-cd /mercure/addons/vagrant/systemd
-vagrant up
 ```
+and follow the steps given by mercure to install the VM with mercure 
+
+```bash
+git clone --branch latest-stable https://github.com/mercure-imaging/mercure.git
+cd mercure
+sudo ./install.sh systemd
+# And run vagrant
+cd mercure/addons/vagrant/systemd
+vagrant up
 
 In case the port 8000 is already under use, that would be forwarded. In the test, the port 8000 (VM) was forwarded to 2200. Then, to access to mercure, we need to search in the browser:
 
