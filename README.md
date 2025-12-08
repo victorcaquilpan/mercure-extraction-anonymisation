@@ -60,6 +60,7 @@ http://127.0.0.1:8000/
  To create the Docker image, the next lines should be run:
 
 ```bash
+git clone https://github.com/victorcaquilpan/mercure-extraction-anonymisation.git
 cd extraction-module
 make build
 # Check image
