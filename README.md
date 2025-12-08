@@ -181,8 +181,6 @@ and follow the steps given by mercure to install the VM with mercure
 
 ```bash
 git clone --branch latest-stable https://github.com/mercure-imaging/mercure.git
-cd mercure
-./install.sh systemd
 # And run vagrant
 cd mercure/addons/vagrant/systemd
 vagrant up
