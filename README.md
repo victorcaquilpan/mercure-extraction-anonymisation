@@ -33,8 +33,7 @@ The structure of the output is illustrated below:
 
 ## Installation Steps
 
-The 
-
+These steps are suitable to run in Linux. If you are working in a computer with Windows, please refer to the steps defined in the bottom of this readme.
 
 1) Clone the mercure repository: 
 
@@ -47,7 +46,7 @@ git clone https://github.com/mercure-imaging/mercure.git
 sudo ./install.sh docker
 ```
 At the end of the installation, **mercureimaging** Docker images should be donwloaded. 
-Mercure is using several containers for all the modules.Also a directory in **/opt/mercure** is created.
+Mercure is using several containers for all the modules. Also a directory in **/opt/mercure** is created. It's suggested to create a folder **mercure-output** in **/opt/mercure**.
 
 
 3) Access to Mercure app.
@@ -68,7 +67,6 @@ docker images
 # You should see aiml/extraction-anonymisation
 ```
 
-
 ## Setting up Mercure 
 
 1) At Mercure, in **Modules** we need to add our module by selecting the Docker image:
@@ -82,7 +80,7 @@ docker images
 * Folder: /opt/mercure/data/mercure-output
 * Exclusion filter: task.json
 
-Note: Mercure will store the output in **/opt/mercure**
+Note: Mercure will store the output in **/opt/mercure**. As it's mentioned before, it's suggested to create a folder **mercure-output** in **/opt/mercure** to store the results of the operations.
 
 3) In **Rules**, we need to add a new rule, defining the pipeline and the input target:
 
@@ -163,17 +161,18 @@ You can find the output of this demo in the **sample-output** folder.
 
 We need to install Docker. For that we can install Docker Desktop and create the Docker image **extraction**.
 
-Run an instance in a virtual machine by:
+To run an instance in a virtual machine (VM), you need to:
 
 * Install [VirtualBox](https://www.virtualbox.org/)
 * Install [Vagrant](https://developer.hashicorp.com/vagrant)
-* Install Git
-* Install vagrants plugins:
+* Install [Git](https://git-scm.com/install/windows)
+
+Install vagrants plugins by running the next command in **Windows Command Prompt** (cmd):
 
 ```bash
 vagrant plugin install vagrant-disksize
 ```
-and follow the steps given by mercure to install the VM with mercure 
+and follow the steps given by mercure to install the VM with mercure. These commands also should run in **cmd**.
 
 ```bash
 git clone --branch latest-stable https://github.com/mercure-imaging/mercure.git
@@ -190,12 +189,18 @@ http://localhost:2200/
 
 Some notes:
 
-* To access by SSH to the VM, you can type **vagrant ssh**, command which allows to access straight to the VM.
+* To access by SSH to the VM, you need to stay at **mercure/addons/vagrant/systemd** and type **vagrant ssh** in the cmd, command which allows to access straight to the VM.
 * Need to create manually, the folder **mercure-output** in **/opt/mercure/data** directory and make the folder writable by using:
 
 ```bash
+# Inside the VM, you can go to /opt/mercure/
+cd /opt/mercure/
+make mercure-output
 sudo chmod 777 mercure-output/
 ```
+
+Now, you need to follow the steps defined previously from the point **4. Installation Steps** to create the Docker image. After that, follow the regular steps defined in **Setting up Mercure**. 
+
 
 The easiest way to test mercure is sending data with [DCMTK Tools](https://dicom.offis.de/en/dcmtk/dcmtk-tools/):
 
