@@ -57,13 +57,7 @@ http://127.0.0.1:8000/
 
 4) Create docker image
 
-The module can be installed on a mercure server using the Modules page of the mercure web interface. Enter the following line into the "Docker tag" field. Mercure will automatically download and install the module:
-
-```
-aiml/extraction-anonym:latest
-```
-
-In Mercure, this have to be working for the Study level. To create the Docker image, the next lines should be run:
+ To create the Docker image, the next lines should be run:
 
 ```bash
 cd extraction-module
@@ -72,6 +66,7 @@ make build
 docker images
 # You should see aiml/extraction-anonymisation
 ```
+
 
 ## Setting up Mercure 
 
@@ -93,7 +88,7 @@ Note: Mercure will store the output in **/opt/mercure**
 * Name of the rule: extraction-mri
 * Selection rule: For our demo, we are using **tags.Modality == "MR"**. Any rule using the DICOM tags can be used. 
 * Action: Processing & Routing
-* Trigger: Completed Study
+* Trigger: Completed Studyy
 * Completion condition: Timeout Reached
 * In Processing tab: Select **extraction** module. 
 * In Routing tab: Select **local**.
@@ -149,7 +144,7 @@ You can find the output of this demo in the **sample-output** folder.
 * They go to provide to me access to a machine, where I can run mercure. They go to provide a VPN to connect.
 * For mercure, I need to remove the PatientName from the output. **Done**.
 * Remove the worksheets (in the cases where a document is stored in the middle of the DICOM images). **Need a sample to test**
-* Provide a lookup table. **Easily, we can create a look-up table from the task.json files stored in each study, as they keep the accession number**. I have created a script to build the lookup table.
+* Provide a lookup table. **Easily, we can create a look-up table from the task.json files stored in each study, as they keep the accession number**. I have created a script to build the lookup table.y
 * The JSON files should have the data of the anonymised images. **Done**
 * Use studyID as name for the task.Json file: **Done**
 
