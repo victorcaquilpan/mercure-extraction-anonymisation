@@ -186,6 +186,7 @@ sudo ./install.sh systemd
 # And run vagrant
 cd mercure/addons/vagrant/systemd
 vagrant up
+```
 
 In case the port 8000 is already under use, that would be forwarded. In the test, the port 8000 (VM) was forwarded to 2200. Then, to access to mercure, we need to search in the browser:
 
