@@ -29,8 +29,8 @@ The structure of the output is illustrated below:
 
 ## Requirements
 
-* Running Docker
-
+* Docker
+* Git
 ## Installation Steps
 
 These steps are suitable to run in Linux. If you are working in a computer with Windows, please refer to the steps defined in the bottom of this readme.
@@ -46,10 +46,17 @@ git clone https://github.com/mercure-imaging/mercure.git
 sudo ./install.sh docker
 ```
 At the end of the installation, **mercureimaging** Docker images should be donwloaded. 
-Mercure is using several containers for all the modules. Also a directory in **/opt/mercure** is created. It's suggested to create a folder **mercure-output** in **/opt/mercure**.
+Mercure is using several containers for all the modules. Also a directory in **/opt/mercure/data/** is created. It's suggested to create a folder **mercure-output** in **/opt/mercure** by running:
 
+```bash
+sudo mkdir /opt/mercure/data/mercure-output
+sudo chmod 777 /opt/mercure/data/mercure-output
 
-3) Access to Mercure app.
+```
+
+In that way, all the output will be leaved there. Other directory might be used, but you need to define carefully all the permissions required.
+
+3) Access to Mercure app. Default user: admin, pass: router.
 ```
 http://127.0.0.1:8000/
 ```
@@ -59,11 +66,12 @@ http://127.0.0.1:8000/
  To create the Docker image, the next lines should be run:
 
 ```bash
+# Clone this repository
 git clone https://github.com/victorcaquilpan/mercure-extraction-anonymisation.git
 cd extraction-module
-make build
+sudo make build
 # Check image
-docker images
+sudo docker images
 # You should see aiml/extraction-anonymisation
 ```
 
@@ -74,20 +82,34 @@ docker images
 * Docker tag: **aiml/extraction-anonymisation**
 * Module type: mercure
 
-2) In **Targets**, we need to add a new target, whose type is Folder.
+2) In **Targets**, we need to add a two targets. Data source (PACS) and output (folder).
 
+**PACS (Input)**:
+
+* Type: DICOM
+* Capability: Both
+* Host/IP: 172.19.0.1        # Provide IP
+* Port: 4242                 # Provide Port
+* AET Target: orthanc        # Provide AET 
+* Pass Incoming value: Yes
+* AET Source: mercure
+* Pass Incoming value: Yes
+
+**Folder (Output)**:
+
+* Type: Folder
 * Name of the target: local
 * Folder: /opt/mercure/data/mercure-output
 * Exclusion filter: task.json
 
-Note: Mercure will store the output in **/opt/mercure**. As it's mentioned before, it's suggested to create a folder **mercure-output** in **/opt/mercure** to store the results of the operations.
+After the target are created, test it to check whether they are reachable.
 
 3) In **Rules**, we need to add a new rule, defining the pipeline and the input target:
 
 * Name of the rule: extraction-mri
-* Selection rule: For our demo, we are using **tags.Modality == "MR"**. Any rule using the DICOM tags can be used. 
+* Selection rule: For our demo, we are using **tags.Modality == "MR"**. Any rule using the DICOM tags can be used. Use **True** if you can to apply the rule to any new image.
 * Action: Processing & Routing
-* Trigger: Completed Studyy
+* Trigger: Completed Study
 * Completion condition: Timeout Reached
 * In Processing tab: Select **extraction** module. 
 * In Routing tab: Select **local**.
@@ -101,22 +123,53 @@ sudo apt install dcmtk
 dcmsend 172.19.0.1 11112 --scan-directories --recurse Pseudo-PHI-DICOM-Data
 ```
 
-Or also using Orthanc, following the [Docker installation steps](https://orthanc.uclouvain.be/book/users/docker.html#docker). 
+Or also using Orthanc, following the [Docker Compose installation steps](https://orthanc.uclouvain.be/book/users/docker.html#docker). 
+
+In a folder **orthanc**, create **docker-compose.yml** with the next content:
+```bash
+version: '3.1'  # Secrets are only available since this version of Docker Compose
+services:
+  orthanc:
+    image: jodogne/orthanc-plugins:1.12.10
+    command: /run/secrets/  # Path to the configuration files (stored as secrets)
+    ports:
+      - 4242:4242
+      - 8042:8042
+    secrets:
+      - orthanc.json
+    environment:
+      - ORTHANC_NAME=HelloWorld
+secrets:
+  orthanc.json:
+    file: orthanc.json
+```
+Also, create an **orthanc.json** file where you need to define the connection with mercure.
 
 ```bash
-cd orthanc-setting
-docker-compose up -d
+{
+  "Name": "${ORTHANC_NAME} in Docker Compose",
+  "RemoteAccessAllowed": true,
+
+  "DicomModalities": {
+    "mercure-target": [ "mercure", "172.19.0.1", 11112 ]
+  }
+}
+```
+
+Now, create the container by running: 
+```bash
+sudo docker-compose up -d
 ```
 
 and to access to the web app, you can go to http://localhost:8042/. Pseudo-data might be uploded to Orthanc using:
 
 ```bash
-dcmsend 172.19.0.1 4242 --scan-directories --recurse Pseudo-PHI-DICOM-Data
+sudo dcmsend 172.19.0.1 4242 --scan-directories --recurse Pseudo-PHI-DICOM-Data
 ```
 
 ## Making DICOM Queries
 
-We can look for DICOM series using Accession Numbers and also filtering by Study Descriptions and Series Descriptions. Orthanc allows to run the pipeline straight away to these images. The output folder be available at **/opt/mercure/mercure-output**, where each study go to a new folder whose name is a random number.
+We can look for DICOM series using Accession Numbers and also filtering by Study Descriptions and Series Descriptions. Orthanc allows to run the pipeline straight away to these images. The output folder be available at **/opt/mercure/data/mercure-output**, where each study go to a new folder whose name is a random number.
 
 This is what you see in the app:
 
@@ -128,7 +181,7 @@ This is what you would see locally:
 
 The structure of the output is defined by:
 
-* **main output folder**: This is a main directory where the data is stored. Located at **/opt/mercure/mercure-output**.
+* **main output folder**: This is a main directory where the data is stored. Located at **/opt/mercure/data/mercure-output**.
 * **study folder**: Filename is assigned randomly.
 * **anonymised-images**: it contains one folder per session and in each one, there will be available the images. The filename is the instance number.
 * **extracted-data folder**: It contains the DICOM tags of the first DICOM image for that session. Personal information is removed.
@@ -152,10 +205,6 @@ You can find the output of this demo in the **sample-output** folder.
 
 ![Workflow](./images/workflow.png)
 
-
-### To solve:
-
-* Is there any limitation that mercure can store data just in "/op/mercure"?
 
 ### Installation in Windows ?
 
@@ -209,6 +258,3 @@ dcmsend 127.0.0.1 --scan-directories --recurse Pseudo-PHI-DICOM-Data
 ```
 
 The pipeline process will be running in the background and all the output be stored at **mercure-output** folder. This process can take 5-10 minutes to generate the first results. After that easily you can copy or move the output files to the shared volume **/vagrant**. Everything there is available by the VM and the Windows machine.
-
-
-
