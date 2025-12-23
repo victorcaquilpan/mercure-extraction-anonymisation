@@ -12,3 +12,19 @@ sudo dcmsend localhost 4242 \
   --recurse \
   Pseudo-PHI-DICOM-Data
 To transfer the files to the Orthanc at the VM
+
+
+## To update the output folder
+
+* Need to update the volumes in docker-compose.yml
+* Rebuild the containers by running: 
+
+```bash
+sudo ./install.sh docker -u
+```
+
+Provide full access to the folders 
+```bash
+sudo chmod 777 /opt/mercure
+sudo chmod 777 /test
+```
